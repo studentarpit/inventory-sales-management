@@ -25,4 +25,5 @@ public class DisplayService {
         viewStockDetails.setAvailableStock(viewStockList);
         return viewStockDetails;
     }
+    
 }
