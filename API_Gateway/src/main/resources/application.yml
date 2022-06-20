@@ -1,0 +1,24 @@
+server:
+  port: 8083
+  
+spring:
+  application:
+    name: API_GATEWAY
+    
+  cloud:
+    gateway:
+      routes:
+      - id: INVENTORY-SERVICE
+        uri:
+          lb://INVENTORY-SERVICE
+        predicates:
+        - Path=/inventory/**
+        
+      - id: SALES-SERVICE
+        uri:
+          lb://SALES-SERVICE
+        predicates:
+        - Path=/sales/**
+        
+        
+          
